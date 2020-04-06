@@ -6,8 +6,8 @@ var app= express();
 const cors=require('cors');
 app.use(bodyParser.json());
 var cinemaController= require('./controllers/cinemaControllers.js');
-//var villeController= require('./controllers/villeControllers.js');
-//var salleController= require('./controllers/salleControllers.js');
+var villeController= require('./controllers/villeControllers.js');
+var salleController= require('./controllers/salleControllers.js');
 
 app.use(cors({origin:'http://localhost:4200'}));
 
@@ -34,9 +34,8 @@ app.get('/', (req, res,next) => {
 
 app.listen(3000,() => console.log('server started at port : 3000'));
 
+app.use('/villes', villeController);
 app.use('/cinemas', cinemaController);
 
-//app.use('/villes', villeController);
-
-//app.use('/salles', salleController);
+app.use('/salles', salleController);
 

@@ -1,14 +1,20 @@
 const express=require('express');
 const mongoose=require('mongoose');
 
-var Ville=mongoose.model('Ville',{
-    nomVille:{ type:String },
-    longitudeVille:{ type:Number },
-    lattitudeVille:{ type:Number },
-    altitudeVille:{ type:Number },
+
+const VilleSchema= mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
+    nomVille: { type: String, required: true },
+      lattitudeVille:{ type:Number },
+      longitudeVille:{ type:Number },
+      altitudeVille:{ type:Number },
+      cinemas:[
+        {
+            type:mongoose.Types.ObjectId,
+            ref:"Cinema"
+        }
+    ]
+  })
   
-})
-
-
-module.exports= {Ville};
-
+    var Ville = mongoose.model("Ville", VilleSchema);
+    module.exports = { Ville}
