@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group" *ngIf="villes">
+                <li class="list-group-item" *ngFor=" let v of villes" (click)="onGetCinema(v)">
+                        {{v.nomVille}}
+                  
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">Liste des cinémas</div>
+                <div class="panel-body" class=" nav nav-pills">
+                  <ul *ngIf="cinemas">
+                       <li *ngFor=" let c of  list" >
+                        {{c}}
+                         
+                       </li>
+                    
+                  </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</div>
