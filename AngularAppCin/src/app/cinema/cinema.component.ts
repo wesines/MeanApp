@@ -34,12 +34,8 @@ cinemas:Cinema[];
          console.log("liste des cinemas est "+ this.cinemas);
 
       this.cinemas=res as Cinema[];
-      this.cinemas.map(docs=>{
-        for(let list in this.cinemas){
-        list=docs.nomCinema;
-        return list;
-        }
-      })
+   
+      
 
     },err=>{
    console.log("Erreur de recuperation des cinémas");
